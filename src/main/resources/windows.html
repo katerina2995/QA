@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+<div id="main" class="sidebar-none sidebar-divider-off">
+    <!-- class="sidebar-none", class="sidebar-left", class="sidebar-right" -->
+    <div class="main-gradient"></div>
+    <div class="wf-wrap">
+        <div class="wf-container-main">
+
+
+            <div id="content" class="content" role="main">
+
+                <h1>Automation Practice Switch Windows</h1>
+                <p>&nbsp;</p>
+                <h2>Browser Windows</h2>
+                <p>
+                    <button id="button1" onclick="newBrwWin()">New Browser Window</button>
+                </p>
+                <p>
+                    <button onclick="newBrwTab()">New Browser Tab</button>
+                                    
+                
+                <p><!-- Switch Winodw Javascript --><br>
+                    <script>                                        
+						function newBrwWin() {
+							window.open("http://itstep.dp.ua", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
+						}
+
+						function newBrwTab() {
+							window.open("http://itstep.dp.ua");
+						}
+                    </script>
+
+        </div><!-- .wf-container -->
+    </div><!-- .wf-wrap -->
+</div>
+</body>
+</html>

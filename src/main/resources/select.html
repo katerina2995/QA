@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <title>Select one and multiple</title>
+    <style>
+        div[class^=example] {
+            margin: 10px;
+        }
+
+        label {
+            font-size: 1.5em;
+            display: block;
+        }
+
+        select {
+            width: 200px;
+            font-size: 1em;
+            vertical-align: top;
+            margin-left: 20px;
+        }
+
+        .col + .col {
+            margin-left: 50px;
+        }
+
+        output {
+            font-size: 1.5em;
+            display: block;
+        }
+
+        .col {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<h2>Multiple select</h2>
+<div class="example2">
+    <div class="col">
+        <label>
+            Pizza additives
+            <select id="additives" multiple size="10">
+                <option value="Cheese" name="cheese">Cheese</option>
+                <option value="Olives" name="olives">Olives</option>
+                <option value="Pepperoni" name="pepperoni">Pepperoni</option>
+                <option value="Anchovies" name="anchovies">Anchovies</option>
+                <option value="Mushrooms" name="mushrooms">Mushrooms</option>
+                <option value="Green Pepper" name="green_pepper">Green Pepper</option>
+                <option value="Bacon" name="bacon">Bacon</option>
+                <option value="Ham" name="ham">Ham</option>
+            </select>
+        </label>
+    </div>
+    <div class="col">
+        <output>
+            <select id="out2" size="10"></select>
+        </output>
+    </div>
+    
+<pre>	
+
+Задание 1.
+
+1. Открыть веб-браузер и загрузить страницу select.html.
+2. В первом выпадающем списке "Multiple select" необходиом выбрать "Cheese" 
+3. Проверить наличие выбранного элемента "Cheese" в select элементе с id = out2
+4. Далее выбрать "Pepperoni"
+5. Проверить наличие выбранного элемента "Cheese" и "Pepperoni" в select элементе с id = out2
+6. Далее выбрать "Mushrooms"
+7. Проверить наличие выбранного элемента "Cheese" и "Pepperoni" и "Mushrooms" в select элементе с id = out2
+	</pre>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $("#additives").change(function () {
+        $("#out2").empty();
+        $("#additives>option:selected").each(function (idx, value) {
+            console.log(value);
+            $("#out2").append($(value).clone());
+        });
+    });
+</script>
+</body>
+</html>
