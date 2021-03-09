@@ -13,7 +13,6 @@ public class HW11 {
         WebDriver webDriver = new ChromeDriver();
 
         webDriver.navigate().to("https://swisnl.github.io/jQuery-contextMenu/demo.html");
-        System.out.println("Start test");
 
         Actions action = new Actions(webDriver);
         WebElement rightClickMe = webDriver.findElement(By.cssSelector("body > div > section > div > div > div > p > span"));
